@@ -8,7 +8,7 @@ from requests.auth import HTTPBasicAuth
 load_dotenv()
 
 shopify_api_url = os.getenv('SHOPIFY_API_URL')
-access_token = os.getenv('SHOPIFY_ACCESS_TOKEN')
+shopify_access_token = os.getenv('SHOPIFY_ACCESS_TOKEN')
 
 epicor_company = os.getenv('EPICOR_COMPANY')
 epicor_web_customer = os.getenv('EPICOR_WEB_CUSTOMER')
@@ -20,7 +20,7 @@ def get_data_from_shopify(endpoint):
     url = f'{shopify_api_url}/{endpoint}'
 
     headers = {
-        'X-Shopify-Access-Token': access_token,
+        'X-Shopify-Access-Token': shopify_access_token,
         'Content-Type': 'application/json'
     }
     
